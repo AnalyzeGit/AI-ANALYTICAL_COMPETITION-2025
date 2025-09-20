@@ -1,5 +1,6 @@
 import pandas as pd
 from typing import List, Dict, Union
+from nlp_tools.nlp_config  import RAW_DATA_DIR
 from nlp_tools.text_scorer import SentimentScore, KeywordBasedScorer
 
 if __name__ == '__main__':
@@ -8,7 +9,7 @@ if __name__ == '__main__':
     # Type Alias
     SentimentResult = Dict[str, Union[str, float]]
 
-    df = pd.read_csv('../data/돌봄인형데이터.csv', encoding='cp949')
+    df = pd.read_csv(RAW_DATA_DIR / "돌봄인형데이터.csv", encoding='cp949')
     assert "text" in df.columns, "'text' 컬럼이 필요합니다."
     texts: List[str] = df['text'].tolist()
 

@@ -45,3 +45,9 @@ if __name__ == '__main__':
         + sorted([c for c in analysis_dataset.columns if c.startswith("keyword_score_")])
     )
     analysis_dataset = analysis_dataset[cols_ordered]
+
+
+# if __name__ == "__main__":
+#     data = pd.read_excel(RAW_DATA_DIR / "발화데이터(대전중구)_pub.xlsx")
+#     utterance = UtterancePreprocessor(data)
+#     utterance_results = utterance.preprocess_utterances()

@@ -2,7 +2,10 @@ import pandas as pd
 from typing import List, Dict, Union
 from nlp_tools.nlp_config  import RAW_DATA_DIR
 from nlp_tools.text_scorer import SentimentScore, KeywordBasedScorer
+from nlp_tools.utterance_preprocessor import UtterancePreprocessor
 
+
+'''
 if __name__ == '__main__':
     # 0) 입력 데이터 준비
     # df: 반드시 'text' 컬럼을 포함해야 함
@@ -45,9 +48,10 @@ if __name__ == '__main__':
         + sorted([c for c in analysis_dataset.columns if c.startswith("keyword_score_")])
     )
     analysis_dataset = analysis_dataset[cols_ordered]
+'''''
 
-
-# if __name__ == "__main__":
-#     data = pd.read_excel(RAW_DATA_DIR / "발화데이터(대전중구)_pub.xlsx")
-#     utterance = UtterancePreprocessor(data)
-#     utterance_results = utterance.preprocess_utterances()
+if __name__ == "__main__":
+    data = pd.read_excel(RAW_DATA_DIR / "발화데이터(대전중구)_pub.xlsx")
+    utterance = UtterancePreprocessor(data)
+    utterance_results = utterance.preprocess_utterances()
+    print(utterance_results)
